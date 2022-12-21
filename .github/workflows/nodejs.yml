@@ -25,9 +25,11 @@ jobs:
           node-version: 16.x
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - run: npm run build --if-prsesnt
       - run: npm run format-check
       - run: npm test
+        env:
+          CI: true
 
 
 
